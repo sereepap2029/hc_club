@@ -5,6 +5,7 @@ class M_admin extends CI_Model
     public function __construct() {
         parent::__construct();
         $this->load->model("m_stringlib");
+        $this->load->model('m_admin_item');  
     }
     
     function generate_id() {
@@ -39,6 +40,10 @@ class M_admin extends CI_Model
     }
     function delete_admin($id) { 
         $this->delete_perm_by_admin_id($id);
+        $pic=$this->m_admin_item->get_all_admin_item($id);
+        foreach ($pic as $key => $value) {
+            $this->m_admin_item->delete($value->id);
+        }
         $this->db->where('id', $id);
         $this->db->delete('admin_user');
     }
@@ -70,6 +75,7 @@ class M_admin extends CI_Model
             $g_list = $query->result();
             foreach ($g_list as $key => $value) {
                 $g_list[$key]->perm=$this->get_perm_by_admin($value->id);
+                $g_list[$key]->item=$this->m_admin_item->get_all_admin_item($value->id);
             }
         }
         return $g_list;
@@ -97,6 +103,7 @@ class M_admin extends CI_Model
             $business = $query->result();
             $business = $business[0];
             $business->perm=$this->get_perm_by_admin($business->id);
+            $business->item=$this->m_admin_item->get_all_admin_item($business->id);
         }
         return $business;
     }
