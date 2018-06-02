@@ -37,7 +37,7 @@ class Register extends CI_Controller {
 	      <?
 	    }
 		if (isset($_POST['name'])&&!isset($_POST['edit'])&&$_POST['username']!=""&&$check_captcha) {
-			if ($_POST['password']==$_POST['con_password']) {
+			if ($_POST['password']==$_POST['con_password']&&$_POST['password']!="") {
 				$member_id=$this->m_member->generate_id();
 				$hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 				$data_ins = array(
@@ -144,6 +144,7 @@ class Register extends CI_Controller {
 		$id=$this->uri->segment(3,'');
 		$user=$this->m_member->get_member_by_id($id);
 		$data['page'] = 'user';
+		$data['action_url'] = site_url("register");
 		if (isset($user->firstname)) {
 			$data['user']=$user;
 			$data['edit']=true;

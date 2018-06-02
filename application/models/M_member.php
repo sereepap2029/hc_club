@@ -81,7 +81,6 @@ class M_member extends CI_Model
         $this->db->update('member', $data);
     }
     function delete_member($id) { 
-        $this->delete_perm_by_member_id($id);
         $pic=$this->m_member_item->get_all_member_item($id);
         foreach ($pic as $key => $value) {
             $this->m_member_item->delete($value->id);

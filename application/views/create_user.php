@@ -200,6 +200,15 @@ $(document).on('click', ".pic-del", function(){
                 }
 
 });
+$(function () {
+    $("[data-fancybox]").fancybox({
+      iframe : {
+        css : {
+          width : '95%',height : '95%'
+        }
+      }
+    });
+});
 </script>
 
 </body>

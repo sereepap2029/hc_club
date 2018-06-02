@@ -3,10 +3,10 @@
   <div class="container">
     <div class="row">
       <div class="col col-md-12">
-        <h1><span class="badge badge-info">Create user</span></h1>
+        <h1><span class="badge badge-info">Create Member</span></h1>
       </div>
       <div class="col col-md-12">
-        <form id="f-member" method="post" action="<?=site_url("register")?>">
+        <form id="f-member" method="post" action="<?=$action_url?>">
           <?
           if (isset($edit)) {
             ?>
@@ -126,6 +126,13 @@
             <div class="col col-md-4 ">
                               <div class="form-group">
                                 <label for="name">เอกสาร</label>
+                                <?
+                                if (isset($edit)) {
+                                  ?>
+                                  <a data-fancybox data-type="iframe" data-src="<?=site_url("member/read_item/".$user->id)?>" href="javascript:;" class="btn btn-success">ดูรูป</a>                                  
+                                  <?
+                                }
+                                ?>
                               </div>
                           </div>
             <div class="col col-md-12">
@@ -241,6 +248,15 @@ $(document).on('click', ".pic-del", function(){
                                         });
                 }
 
+});
+$(function () {
+    $("[data-fancybox]").fancybox({
+      iframe : {
+        css : {
+          width : '95%',height : '95%'
+        }
+      }
+    });
 });
 </script>
 
