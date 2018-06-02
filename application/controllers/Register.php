@@ -149,7 +149,7 @@ class Register extends CI_Controller {
 			$data['user']=$user;
 			$data['edit']=true;
 		}
-		$this->load->view('header',$data);
+		$this->load->view('anno_header',$data);
 		$this->load->view('create_member',$data);
 		$this->load->view('footer',$data);
 	}
