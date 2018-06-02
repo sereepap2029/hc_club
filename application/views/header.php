@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="<?=site_url()?>favicon.ico">
 
-    <title>Lawyer</title>
+    <title>HC Club</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?=site_url()?>css/bootstrap.min.css" rel="stylesheet">
@@ -23,6 +23,9 @@
     <script src="<?echo site_url();?>js/jquery.datetimepicker.js"></script>
     <script src="<?=site_url()?>jquery-ui-1.12.1/jquery-ui.js"></script>
     <script src="<?=site_url()?>js/jquery.fancybox.js"></script>
+
+    
+    <script src='https://www.google.com/recaptcha/api.js'></script>
   </head>
 
   <body>

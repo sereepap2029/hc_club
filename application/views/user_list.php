@@ -31,7 +31,7 @@
           ?>
           <tr>
             <td><?=$key+1?></td>
-            <td><a href="#!"><?=$value->username?></a></td>
+            <td><a href="<?=site_url("admin_user/create/".$value->id)?>"><?=$value->username?></a></td>
             <td><input type="checkbox" name="user_permission" class="c_perm" u-id="<?=$value->id?>" value="account" <?if(isset($value->perm['account'])){ echo "checked";}?>></td>
             <td><input type="checkbox" name="user_permission" class="c_perm" u-id="<?=$value->id?>" value="data" <?if(isset($value->perm['data'])){ echo "checked";}?>></td>            
             <td><input type="checkbox" name="user_permission" class="c_perm" u-id="<?=$value->id?>" value="delete" <?if(isset($value->perm['delete'])){ echo "checked";}?>></td>            
