@@ -102,11 +102,14 @@ class M_admin extends CI_Model
     }
     function get_by_username_password($username,$password) {
         $producer = new stdClass();
-        $query = $this->db->get_where('admin_user', array('username' => $username,'password' => $password));
+        $query = $this->db->get_where('admin_user', array('username' => $username));
         
         if ($query->num_rows() > 0) {
             $producer = $query->result();
             $producer = $producer[0];
+            if(!password_verify($password, $producer->password)) {
+                $producer = new stdClass();
+            } 
         }
         return $producer;
     }

@@ -68,14 +68,13 @@ class Admin_user extends CI_Controller {
 		if (isset($_POST['name'])&&!isset($_POST['edit'])&&$_POST['username']!="") {
 			if ($_POST['password']==$_POST['con_password']) {
 				$id=$this->m_admin->generate_id();
-				$hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 				$data_ins = array(
 					'id' => $id,
 					'prefix' => $_POST['prefix'],
 					'firstname' => $_POST['name'],
 					'lastname' => $_POST['surname'],
 					'username' => $_POST['username'],
-					'password' => $hashed_password,
+					'password' => $_POST['password'],
 					'email' => $_POST['email'],
 				 );
 				if ($this->m_admin->check_dup_username($_POST['username'])) {

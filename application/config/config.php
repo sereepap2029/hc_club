@@ -23,9 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://lawyer/';
-$config['file_upload_url'] = 'http://lawyer/';
-$config['req_print_content_url'] = 'http://lawyer_print_content/';
+$config['base_url'] = 'http://hcc_club/';
+$config['file_upload_url'] = 'http://hcc_club/';
+$config['req_print_content_url'] = 'http://hcc_club/';
 
 /*
 |--------------------------------------------------------------------------

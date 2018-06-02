@@ -28,7 +28,7 @@
   <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Lawyer</a>
+      <a class="navbar-brand" href="#">HC Club</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,29 +38,15 @@
           <li class="nav-item active">
             <a class="nav-link" href="<?=site_url("main/dashboard")?>">Home</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="<?=site_url("main/aom")?>">คดีทั่วไป</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="<?=site_url("main/bang")?>">งานบังคับคดี</a>
-          </li>
 
           <li class="nav-item active">
-            <a class="nav-link" href="<?=site_url("task")?>">Task</a>
+            <a class="nav-link" href="<?=site_url("member")?>">สมาชิก</a>
           </li>
           <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin user</a>
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ผู้ดูแลระบบ</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
               <a class="dropdown-item" href="<?=site_url("admin_user/create")?>">Add</a>
               <a class="dropdown-item" href="<?=site_url("admin_user")?>">Admin list</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Template</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="<?=site_url("template/section4")?>">แบบ ข้อ.4</a>
-              <a class="dropdown-item" href="<?=site_url("lawyer")?>">ทนายความ</a>
-              <a class="dropdown-item" href="<?=site_url("office_config")?>">สำนักงาน</a>
             </div>
           </li>
           <li class="nav-item dropdown active">

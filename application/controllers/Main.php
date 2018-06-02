@@ -15,6 +15,11 @@ class Main extends CI_Controller {
 		$data['page'] = 'home';
 		$this->load->view('login',$data);
 	}
+	public function hash_pass()
+	{
+		$hashed_password = password_hash($_GET['password'], PASSWORD_DEFAULT);
+		var_dump($hashed_password);
+	}
 	public function dashboard()
 	{
 		if ($this->session->userdata('id')) {
