@@ -14,8 +14,13 @@ class Register extends CI_Controller {
 	    if (isset($_POST['g-recaptcha-response'])&&$_POST['g-recaptcha-response']!="") {
 	      $url = 'https://www.google.com/recaptcha/api/siteverify';
 	      $myvars = 'response=' . $_POST['g-recaptcha-response'].'&secret=6LctyzgUAAAAALOH9mJdLj0OELnfRteXZX2s28JW';
-
-	      $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LctyzgUAAAAALOH9mJdLj0OELnfRteXZX2s28JW&response=".$_POST['g-recaptcha-response']."&remoteip=".$_SERVER['REMOTE_ADDR']);
+	      $arrContextOptions=array(
+			    "ssl"=>array(
+			        "verify_peer"=>false,
+			        "verify_peer_name"=>false,
+			    ),
+			); 
+	      $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LctyzgUAAAAALOH9mJdLj0OELnfRteXZX2s28JW&response=".$_POST['g-recaptcha-response']."&remoteip=".$_SERVER['REMOTE_ADDR'], false, stream_context_create($arrContextOptions));
 	      $obj = json_decode($response);
 	      if($obj->success == true)
 	      {
